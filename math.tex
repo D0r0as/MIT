@@ -1,0 +1,42 @@
+\documentclass[14pt]{extarticle}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{fancyvrb}
+\usepackage{indentfirst}
+\usepackage[
+  left=2cm, right=2cm, top=2cm, bottom=2cm, headsep=0.2cm, footskip=0.6cm, bindingoffset=0cm
+]{geometry}
+\usepackage[english,russian]{babel}
+
+\begin{document}
+
+\section*{Вариант 26}
+  Уравнение математической модели:
+    
+  \begin{equation}
+      q_0(q_0^0 + q_\text{т}^0 + K p_x^0) + q(q_0^\text{т} + q_\text{т}^\text{т} + K p_x^\text{т}) + p_0(q_0^\text{тр} + q_\text{т}^\text{тр} + K p_x^\text{тр}) = 1.
+  \end{equation}
+    
+  По аналогии с предыдущим вариантом модели условные вероятности $q_0$(($l$ + 1)/$l$), $q$(($l$ +
+  1)/$l$), $p_x$(($l$ + 1)/$l$) правильного приема нулевого, токового, стирания, соответственно, для
+  ($l$ + 1)-го символа запишутся в виде:
+    
+  \begin{equation}\label{eq}
+      \left.
+        \begin{array}{cc}
+          q_0((l + 1)/l) = q_0 q_0^0 + q q_0 ^ \text{т} + K p_x q_0^x; \\
+          q_\text{т}((l + 1)/l) = q_0 q_\text{т}^0 + q q_\text{т}^\text{т} + K p_x q_\text{т}^x; \\
+          p_0((l + 1)/l) = q_0 p_\text{тр}^0 + q p_\text{тр}^\text{т} + K p_x p_x^x.
+        \end{array}
+      \right\}
+  \end{equation}
+  Решая систему уравнений (\ref{eq}), можно получить формулы для определения безусловных вероятностей $q_0$, $q$, $p_x$.
+
+\end{document}
+
+
