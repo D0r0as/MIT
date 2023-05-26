@@ -1,0 +1,31 @@
+\section{Flash-носитель с исходным кодом программ, использующихся в работе}
+{\raggedright
+Папка src содержит оригинальный исходный код программы:}
+
+\begin{enumerate}
+    \item[] Папка naive - реализация без АСД
+    \item[] Папка naiveast - реализация c АСД
+    \item[] Папка arena - реализация с АСД на основе 
+    региона
+\end{enumerate}
+
+{\raggedright
+Папка extsrc содержит измененный исходный код, необходимый для исследования производительности:}
+
+\begin{enumerate}
+    \item[] Папка naive - реализация без АСД
+    \item[] Папка naiveast - реализация c АСД
+    \item[] Папка arena - реализация с АСД на основе 
+    региона
+\end{enumerate}
+\label{app:A}
+
+\section{Исходный код программы на Python, осуществляющей исследование
+производительности полученных реализаций}
+\inputminted{python}{requirements/src/test.py}
+\label{app:B}
+
+\section{Исходный код программы на Python, осуществляющей анализ полученных 
+результатов}
+\inputminted{python}{requirements/src/graph.py}
+\label{app:C}
