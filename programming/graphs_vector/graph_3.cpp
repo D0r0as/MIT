@@ -19,7 +19,6 @@ void graph() {
         cin >> v >> u; 
         v--; u--; 
         g[v].push_back(u); 
-        //g[u].push_back(v); 
     } 
     for (int i = 0; i < n; ++i) { 
         sort(g[i].begin(), g[i].end()); // сортируем списки смежных вершин для каждой вершины 
@@ -32,9 +31,7 @@ int main() {
     graph(); 
     for (int i = 0; i < n; i++){
         cout << i << ": ";
-        //for (auto it1 = g.begin(); it1 != g.end(); it1++, cout << endl)
-		    cout << g[i].size();
+        cout << g[i].size();
     }
     return 0;
-    //cout << "The number of vertices adjacent to the given one: " << g[x].size();
 }

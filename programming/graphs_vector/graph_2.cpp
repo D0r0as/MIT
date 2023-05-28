@@ -28,10 +28,10 @@ void graph() {
 } 
 
 void output(vector<vector<int>> g){
-    for (int i = 0; i < g.size(); ++i){
+    for (int i = 0; i < n; ++i){
         cout << i << ": ";
-        for(auto it = g[i].begin(); it != g[i].end(); it++)
-            cout << *it << " ";
+        for(int j = 0; j < g[i].size(); j++)
+            cout << g[i][j] + 1 << " ";
         cout << endl;
     }
 }
@@ -45,13 +45,13 @@ int main() {
 	cin >> b; 
     a--; b--;
 
-    for (auto iter = g[a].begin(); iter != g[a].end(); iter++){
-        if (*iter == b) 
-            g[a].erase(iter);
+    for (int j = 0; j < g[a].size(); j++){
+        if (g[a][j] == b) 
+            g[a].erase(g[a].begin() + j);
     }
-    for (auto iter = g[b].begin(); iter != g[b].end(); iter++){
-        if (*iter == a) 
-            g[b].erase(iter);
+    for (int j = 0; j < g[a].size(); j++){
+        if (g[b][j] == a) 
+            g[b].erase(g[b].begin() + j);
     }
     // g[a].erase(b);
 	// g[b].remove(a);
