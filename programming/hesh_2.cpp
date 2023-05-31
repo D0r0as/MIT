@@ -79,25 +79,30 @@ void create(vector <people> a, vector<people> &table) // функция созд
 	}
 }
 
+bool operator == (people a, people b) { // переопределение оператора сравнения
+    return (a.Surname == b.Surname && a.Salary == b.Salary && a.Profession == b.Profession &&
+            a.Experience == b.Experience && a.DateOfBirth == b.DateOfBirth);
+}
+
 void find_el(int x, vector<people> table) // функция нахождения элемента в таблице
 {
-	int hesh = help_h(x); // находим хэш для заданного числа
-	for (auto it = table.begin(); it != table.end(); it++) 
+	//int hesh = help_h(x); // находим хэш для заданного числа
+	bool fl = false;
+	for (auto it : table) 
 	{
-        people c = *it;
-		if (c.Experience == x) 
-		{
-			cout << "information about employee: "; print(c); // и смотрим, начиная с него на ячейки, в попытках найти ячейку, содержащую искомый элемент
-			cout << endl;
-		}
+        people c = it;
+		if (c == x)
+			fl = true;
 	}
+	if (fl) cout << "yes";
+	else cout << "no";
 }
 
 int main()
 {
 	vector<people> tab;
 	vector<people> x;
-    x = inFile();
+    	x = inFile();
 	create(x, tab); // создадим хэш-таблицу работников
 	for (int i = 0; i < tab.size(); i++) 
 	{
@@ -105,9 +110,9 @@ int main()
 		cout << "\n"; // выведем хэш-таблицу
 	}
 	cout << "\n";
-	int e;
-	cout << "please, enter the work experience of the person you want to find: ";
-	cin >> e; // спрашиваем искомый опыт и находим людей с ним
+	people e;
+	cout << "please, enter person you want to check: ";
+	cin >> e.Surname >> e.Profession >> e.Experience >> e.DateOfBirth >> e.Salary; // спрашиваем искомый опыт и находим людей с ним
 	find_el(e, tab);
-    return 0;
+    	return 0;
 }
